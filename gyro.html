@@ -172,6 +172,7 @@
 
 			var animate = function () {
 				requestAnimationFrame( animate );
+                
 
 				update();
 			};
@@ -188,6 +189,8 @@
 				camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
 
 				camera.lookAt( camera.target );
+                
+                controls.update();
 
 				/*
 				// distortion
