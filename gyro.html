@@ -6,9 +6,56 @@
 		<style>
 			body { margin: 0; }
 			canvas { display: block; }
+            
+            #overlay {
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 1;
+                background-color: #000000;
+                color: #ffffff;
+            }
+            
+            #overlay > div {
+                text-align: center;
+            }
+            
+            #overlay > div > button {
+                height: 20px;
+                background: transparent;
+                color: #ffffff;
+                outline: 1px solid #ffffff;
+                border: 0px;
+                cursor: pointer;
+            }
+
+            a, button, input, select {
+                pointer-events: auto;
+            }
+            button {
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+            
+            #overlay > div > p {
+                color: #777777;
+                font-size: 12px;
+            }
 		</style>
 	</head>
 	<body>
+        <div id="overlay">
+			<div>
+				<button id="startButton">Start Demo</button>
+				<p>Using device orientation might require a user interaction.</p>
+			</div>
+		</div>
 		<script type="module">
             
             import * as THREE from './three/build/three.module.js';
@@ -39,58 +86,74 @@
                 obj.rotateOnAxis(axis, theta); // rotate the OBJECT
             }
             
-            var scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xffffff);
-			var camera = new THREE.PerspectiveCamera( 40, window.innerWidth/window.innerHeight, 0.1, 1000 );
-            camera.target = new THREE.Vector3( 0, 0, 0 );
+            var startButton = document.getElementById( 'startButton' );
+			startButton.addEventListener( 'click', function () {
+				init();
+				animate();
+
+			}, false );
             
-            var controls = new DeviceOrientationControls( camera );
-
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-
-			var geometry = new THREE.BoxGeometry(1.25, 1, 0.001);
+            var camera, scene, renderer, controls;
             
+            function init() {
+                
+                var overlay = document.getElementById( 'overlay' );
+				overlay.remove();
             
-            function addRect(material) {
-                return new THREE.Mesh( geometry, material );
-            }
-            
-            function addImage(finished) {
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0xffffff);
+                camera = new THREE.PerspectiveCamera( 40, window.innerWidth/window.innerHeight, 0.1, 1000 );
+                camera.target = new THREE.Vector3( 0, 0, 0 );
 
-				new THREE.ImageLoader()
-					.setCrossOrigin( '*' )
-					.load( 'img/test1.jpg?' + performance.now(), function ( image ) {
+                controls = new DeviceOrientationControls( camera );
 
-						let texture = new THREE.CanvasTexture(image, 
-                                                              THREE.UVMapping, 
-                                                              THREE.ClampToEdgeWrapping, THREE.ClampToEdgeWrapping,
-                                                              THREE.LinearFilter,
-                                                              THREE.LinearMipmapLinearFilter,
-                                                              THREE.RGBAFormat,
-                                                              THREE.UnsignedByteType,
-                                                              renderer.getMaxAnisotropy());
-						let material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
-						let obj = addRect( material );
-                        finished(obj)
-					} );
+                renderer = new THREE.WebGLRenderer();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                document.body.appendChild( renderer.domElement );
 
-			}
-			
-            var cubes = [];
-            
-            for(let i = 0; i < 3; i++) {
-                addImage(function(obj) {
-                    cubes[i] = obj;
-                    
-                    scene.add( cubes[i] );
-                    cubes[i].position.z = -5;
+                var geometry = new THREE.BoxGeometry(1.25, 1, 0.001);
 
-                    let div = 5;
 
-                    rotateAboutPoint(cubes[i], new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 1, 0 ), (-1 * Math.PI/2) + (Math.PI / div)  - i * (Math.PI / div), false);
-                });
+                function addRect(material) {
+                    return new THREE.Mesh( geometry, material );
+                }
+
+                function addImage(finished) {
+
+                    new THREE.ImageLoader()
+                        .setCrossOrigin( '*' )
+                        .load( 'img/test1.jpg?' + performance.now(), function ( image ) {
+
+                            let texture = new THREE.CanvasTexture(image, 
+                                                                  THREE.UVMapping, 
+                                                                  THREE.ClampToEdgeWrapping, THREE.ClampToEdgeWrapping,
+                                                                  THREE.LinearFilter,
+                                                                  THREE.LinearMipmapLinearFilter,
+                                                                  THREE.RGBAFormat,
+                                                                  THREE.UnsignedByteType,
+                                                                  renderer.getMaxAnisotropy());
+                            let material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
+                            let obj = addRect( material );
+                            finished(obj)
+                        } );
+
+                }
+
+                var cubes = [];
+
+                for(let i = 0; i < 3; i++) {
+                    addImage(function(obj) {
+                        cubes[i] = obj;
+
+                        scene.add( cubes[i] );
+                        cubes[i].position.z = -5;
+
+                        let div = 5;
+
+                        rotateAboutPoint(cubes[i], new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 1, 0 ), (-1 * Math.PI/2) + (Math.PI / div)  - i * (Math.PI / div), false);
+                    });
+                }
+                
             }
             
             var isUserInteracting = true,
@@ -200,8 +263,6 @@
 				renderer.render( scene, camera );
 
 			}
-
-			animate();
         </script>
 	</body>
 </html>
