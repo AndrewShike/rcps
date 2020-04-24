@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>The Reconception of Chicago Public Schools</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="js/three.js"></script>
+		<script>
+            
+            // obj - your object (THREE.Object3D or derived)
+            // point - the point of rotation (THREE.Vector3)
+            // axis - the axis of rotation (normalized THREE.Vector3)
+            // theta - radian value of rotation
+            // pointIsWorld - boolean indicating the point is in world coordinates (default = false)
+            function rotateAboutPoint(obj, point, axis, theta, pointIsWorld) {
+                pointIsWorld = (pointIsWorld === undefined)? false : pointIsWorld;
+
+                if(pointIsWorld){
+                    obj.parent.localToWorld(obj.position); // compensate for world coordinate
+                }
+
+                obj.position.sub(point); // remove the offset
+                obj.position.applyAxisAngle(axis, theta); // rotate the POSITION
+                obj.position.add(point); // re-add the offset
+
+                if(pointIsWorld){
+                    obj.parent.worldToLocal(obj.position); // undo world coordinates compensation
+                }
+
+                obj.rotateOnAxis(axis, theta); // rotate the OBJECT
+            }
+            
+            var scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xffffff);
+			var camera = new THREE.PerspectiveCamera( 40, window.innerWidth/window.innerHeight, 0.1, 1000 );
+            camera.target = new THREE.Vector3( 0, 0, 0 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var geometry = new THREE.BoxGeometry(1.25, 1, 0.001);
+            
+            function addRect(material) {
+                return new THREE.Mesh( geometry, material );
+            }
+            
+            function addImage(finished) {
+
+				new THREE.ImageLoader()
+					.setCrossOrigin( '*' )
+					.load( 'img/test1.jpg?' + performance.now(), function ( image ) {
+
+						let texture = new THREE.CanvasTexture(image, 
+                                                              THREE.UVMapping, 
+                                                              THREE.ClampToEdgeWrapping, THREE.ClampToEdgeWrapping,
+                                                              THREE.LinearFilter,
+                                                              THREE.LinearMipmapLinearFilter,
+                                                              THREE.RGBAFormat,
+                                                              THREE.UnsignedByteType,
+                                                              renderer.getMaxAnisotropy());
+						let material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
+						let obj = addRect( material );
+                        finished(obj)
+					} );
+
+			}
+			
+            var cubes = [];
+            
+            for(let i = 0; i < 3; i++) {
+                addImage(function(obj) {
+                    cubes[i] = obj;
+                    
+                    scene.add( cubes[i] );
+                    cubes[i].position.z = -5;
+
+                    let div = 5;
+
+                    rotateAboutPoint(cubes[i], new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 1, 0 ), (-1 * Math.PI/2) + (Math.PI / div)  - i * (Math.PI / div), false);
+                });
+            }
+            
+            var isUserInteracting = true,
+				onMouseDownMouseX = window.innerWidth / 2, 
+                onMouseDownMouseY = window.innerHeight / 2,
+				lon = 0, onMouseDownLon = 0,
+				lat = 0, onMouseDownLat = 0,
+				phi = 0, theta = 0,
+                sens = -0.07;
+            
+            //document.addEventListener( 'mousedown', onPointerStart, false );
+            document.addEventListener( 'mousemove', onPointerMove, false );
+            //document.addEventListener( 'mouseup', onPointerUp, false );
+
+            document.addEventListener( 'wheel', onDocumentMouseWheel, false );
+
+            //document.addEventListener( 'touchstart', onPointerStart, false );
+            document.addEventListener( 'touchmove', onPointerMove, false );
+            //document.addEventListener( 'touchend', onPointerUp, false );
+            
+            window.addEventListener( 'resize', onWindowResize, false );
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+            
+            
+            function onPointerStart( event ) {
+
+				isUserInteracting = true;
+
+				var clientX = event.clientX || event.touches[ 0 ].clientX;
+				var clientY = event.clientY || event.touches[ 0 ].clientY;
+
+				onMouseDownMouseX = clientX;
+				onMouseDownMouseY = clientY;
+
+				onMouseDownLon = lon;
+				onMouseDownLat = lat;
+
+			}
+
+			function onPointerMove( event ) {
+
+				if ( isUserInteracting === true ) {
+
+					var clientX = event.clientX || event.touches[ 0 ].clientX;
+					var clientY = event.clientY || event.touches[ 0 ].clientY;
+
+					lon = ( onMouseDownMouseX - clientX ) * sens + onMouseDownLon;
+					lat = ( clientY - onMouseDownMouseY ) * sens + onMouseDownLat;
+
+				}
+
+			}
+
+			function onPointerUp() {
+
+				isUserInteracting = false;
+
+			}
+
+			function onDocumentMouseWheel( event ) {
+
+				var fov = camera.fov + event.deltaY * 0.05;
+
+				camera.fov = THREE.MathUtils.clamp( fov, 10, 75 );
+
+				camera.updateProjectionMatrix();
+
+			}
+            
+            
+
+			var animate = function () {
+				requestAnimationFrame( animate );
+
+				update();
+			};
+            
+            
+            function update() {
+
+				lat = Math.max( - 85, Math.min( 85, lat ) );
+				phi = THREE.MathUtils.degToRad( 90 - lat );
+				theta = THREE.MathUtils.degToRad( lon );
+
+				camera.target.x = 500 * Math.sin( phi ) * Math.cos( theta );
+				camera.target.y = 500 * Math.cos( phi );
+				camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
+
+				camera.lookAt( camera.target );
+
+				/*
+				// distortion
+				camera.position.copy( camera.target ).negate();
+				*/
+
+				renderer.render( scene, camera );
+
+			}
+
+			animate();
+        </script>
+	</body>
+</html>
