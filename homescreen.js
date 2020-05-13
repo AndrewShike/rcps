@@ -137,10 +137,10 @@ homescreen.init = function(app) {
     
     for(let k in app.data.artists) {
         let v = app.data.artists[k];
-        let cov_url = "./work/" + k.replace(/\s+/g, '') + "/" + v.cover
+        let cov_url = v.dir + v.cover
         let i = n;
         
-        this.works[k] = new Cover(app, { image: cov_url, covertxt: k }, placeIso(sphereVects, app, i));
+        this.works[k] = new Cover(app, { image: cov_url, covertxt: v.name }, placeIso(sphereVects, app, i));
         
         n++;
     }

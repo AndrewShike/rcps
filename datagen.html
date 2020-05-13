@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>The Reconception of Chicago Public Schools</title>
+		<style>
+			body { white-space: pre; font-family: monospace; }
+		</style>
+	</head>
+	<body>
+		<script>
+            
+            var names = [
+                "Matt Siber",
+                "Edra Soto",
+                "Jim Iska",
+                "Eileen Ryan",
+                "Suzette\nBross",
+                "Kioto Aoki\n& Jan Tichy",
+                "Marzena\nAbrahamik",
+                "Lynn Renee\nPersin",
+                "Bob Thall",
+                "Kelly Costello\n& Karishma\nKalpesh\nDotia",
+                "Scott Fortino",
+                "Melissa\nAnn Pinney",
+                "Marzena\nAbrahamik\n& Justin\nSchmitz",
+                "Jeff Phillips",
+                "Krista\nWortendyke",
+                "Doug\nMcGoldrick",
+                 "John Preus",
+                "Justin Schmitz",
+                "Janet\nMesic-\nMackie"
+            ]
+            
+            var artists = [];
+            
+            var requestURL = './files.json';
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+            request.onload = function() {
+                var files = request.response;
+                
+                for(let i in names) {
+
+                    let work = [];
+                    let k = names[i].replace(/\s+/g, '').replace(/(&amp;|&)/g, '').replace(/(\-)/g, '').replace(/(\n)/g, '');
+                    
+                    console.log(k);
+                    
+                    for(let j in files[k]) {
+                        work[j] = {
+                            file: files[k][j],
+                            type: "image",
+                            title: "title"
+                        }
+                    }
+                    
+                    artists[i] = {
+                        name: names[i],
+                        dir: "./work/" + k + "/",
+                        cover: "COVER.jpg",
+                        work: work
+                    }
+                }
+
+                document.body.innerHTML = "";
+                document.body.appendChild(document.createTextNode(JSON.stringify({ artists: artists }, null, 4)));
+            }
+        </script>
+	</body>
+</html>

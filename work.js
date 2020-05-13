@@ -102,11 +102,13 @@ export function Cover(app, work_data, onload) {
                     
         loader.load('./three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
             
-            var txtgeo = new app.THREE.TextGeometry( "Justin\nSchmitz", {
+            
+//            var txtgeo = new app.THREE.TextGeometry( "Justin\nSchmitz", {
+            var txtgeo = new app.THREE.TextGeometry( me.covertxt, {
                 font: font,
-                size: 0.25,
+                size: 0.2,
                 height: 0.01,
-                curveSegments: 2
+                curveSegments: 12
             } );
             txtgeo.center();
             
