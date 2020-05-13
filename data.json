@@ -222,27 +222,72 @@
             ]
         },
         {
-            "name": "Eileen Ryan",
-            "dir": "./work/EileenRyan/",
+            "name": "Scott Fortino",
+            "dir": "./work/ScottFortino/",
             "cover": "COVER.jpg",
             "work": [
                 {
-                    "file": "SABEHA.jpg",
+                    "file": "13fortino-sullivan-creases-2020.jpg",
                     "type": "image",
                     "title": "title"
                 },
                 {
-                    "file": "Willie-1.jpg",
+                    "file": "02fortino-westinghouse-2019.jpg",
                     "type": "image",
                     "title": "title"
                 },
                 {
-                    "file": "Bem-1.jpg",
+                    "file": "01fortino-curie-artstudio-2019.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "06fortino - marsh elementary2019.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "08fortino-comer-teachers desk-2018.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "1106fortino-clemete-walkway-2019.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "14fortino_marsh_counselor_s office.jpg",
                     "type": "image",
                     "title": "title"
                 },
                 {
                     "file": "COVER.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "10fortino_vanderpoel_2019.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "05fortino-clemente 2019.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "09fortino-sullivan-2020.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "03fortino-comer-portraits-2018.jpg",
+                    "type": "image",
+                    "title": "title"
+                },
+                {
+                    "file": "11fortino - clemente 2019.jpg",
                     "type": "image",
                     "title": "title"
                 }
@@ -781,72 +826,27 @@
             ]
         },
         {
-            "name": "Scott Fortino",
-            "dir": "./work/ScottFortino/",
+            "name": "Eileen Ryan",
+            "dir": "./work/EileenRyan/",
             "cover": "COVER.jpg",
             "work": [
                 {
-                    "file": "13fortino-sullivan-creases-2020.jpg",
+                    "file": "SABEHA.jpg",
                     "type": "image",
                     "title": "title"
                 },
                 {
-                    "file": "02fortino-westinghouse-2019.jpg",
+                    "file": "Willie-1.jpg",
                     "type": "image",
                     "title": "title"
                 },
                 {
-                    "file": "01fortino-curie-artstudio-2019.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "06fortino - marsh elementary2019.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "08fortino-comer-teachers desk-2018.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "1106fortino-clemete-walkway-2019.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "14fortino_marsh_counselor_s office.jpg",
+                    "file": "Bem-1.jpg",
                     "type": "image",
                     "title": "title"
                 },
                 {
                     "file": "COVER.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "10fortino_vanderpoel_2019.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "05fortino-clemente 2019.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "09fortino-sullivan-2020.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "03fortino-comer-portraits-2018.jpg",
-                    "type": "image",
-                    "title": "title"
-                },
-                {
-                    "file": "11fortino - clemente 2019.jpg",
                     "type": "image",
                     "title": "title"
                 }

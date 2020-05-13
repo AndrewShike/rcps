@@ -106,7 +106,7 @@ export function Cover(app, work_data, onload) {
 //            var txtgeo = new app.THREE.TextGeometry( "Justin\nSchmitz", {
             var txtgeo = new app.THREE.TextGeometry( me.covertxt, {
                 font: font,
-                size: 0.2,
+                size: 0.15,
                 height: 0.01,
                 curveSegments: 12
             } );
