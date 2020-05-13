@@ -10,11 +10,24 @@ var orientationControls,
     lon = 0, onMouseDownLon = 0,
     lat = 0, onMouseDownLat = 0,
     phi = 0, theta = 0,
-    sens = -0.07;
+    sens = -0.13;
+
+var mouse, INTERSECTED, raycaster;
 
 controls.init = function(app) {
+    
+    raycaster = new app.THREE.Raycaster();
+    mouse = new app.THREE.Vector2();
+    
+    function setMouse(x,y) {
+        mouse.x = ( x) * 2 - 1;
+        mouse.y = - ( y  ) * 2 + 1;
+    }
+    
     if(app.mobile) {
         orientationControls = new DeviceOrientationControls(app.camera);
+        
+        setMouse(0.5, 0.5);
     } else {
             
         //document.addEventListener( 'mousedown', onPointerStart, false );
@@ -65,7 +78,8 @@ controls.init = function(app) {
                 lat = ( clientY - onMouseDownMouseY ) * sens + onMouseDownLat;
 
             }
-
+            
+            setMouse(event.clientX / window.innerWidth, event.clientY / window.innerHeight)
         }
 
         function onPointerUp() {
@@ -99,6 +113,41 @@ controls.update = function(app) {
         app.camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
 
         app.camera.lookAt( app.camera.target );
-                
     }
+    
+    raycaster.setFromCamera( mouse, app.camera );
+//    let intersects = raycaster.intersectObjects( app.current_screen.group.children );
+    let intersects = raycaster.intersectObjects( app.scene.children, true );
+    
+//    console.log(mouse.x, mouse.y);
+    
+//    for ( var i = 0; i < intersects.length; i++ ) {
+//
+//		intersects[ i ].object.material.color.set( 0xff0000 );
+//
+//	}
+
+    if ( intersects.length > 0 ) {
+
+        if ( INTERSECTED != intersects[ 0 ].object ) {
+
+            if ( INTERSECTED ) {
+                if(INTERSECTED.selected) INTERSECTED.selected(false);
+            }
+
+            INTERSECTED = intersects[ 0 ].object;
+            
+            if(INTERSECTED.selected) INTERSECTED.selected(true);
+        }
+
+    } else {
+
+        if ( INTERSECTED ) {
+            if(INTERSECTED.selected) INTERSECTED.selected(false);
+        }
+
+        INTERSECTED = null;
+
+    }
+
 }

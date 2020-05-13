@@ -21,7 +21,7 @@ function rotateAboutPoint(obj, point, axis, theta, pointIsWorld) {
     obj.rotateOnAxis(axis, theta); // rotate the OBJECT
 }
 
-var scale = 0.5;
+var scale = 1;
 
 export function Work(app, work_data, onload) {
     
@@ -40,11 +40,16 @@ export function Work(app, work_data, onload) {
                                                       app.THREE.LinearMipmapLinearFilter,
                                                       app.THREE.RGBAFormat,
                                                       app.THREE.UnsignedByteType,
-                                                      app.renderer.getMaxAnisotropy());
+                                                      app.renderer.capabilities.getMaxAnisotropy());
                 let material = new app.THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
                 let geometry = new app.THREE.BoxGeometry(scale, (image.height / image.width) * scale, 0.001);
-
-                imgload(new app.THREE.Mesh( geometry, material ), image);
+                
+                imgload({
+                    obj: new app.THREE.Mesh( geometry, material ), 
+                    geo: geometry, 
+                    mat: material, 
+                    img: image 
+                });
             } );
     }
     
@@ -56,67 +61,85 @@ export function Work(app, work_data, onload) {
     this.y = 0;
     
     var wrk = this;
+    this.grp = new app.THREE.Group();
     
     if(this.image) {
-        addImage(this.image, function(obj, image) {
-            wrk.obj = obj;
-
-            app.scene.add( wrk.obj );
-            wrk.obj.position.z = -5;
+        addImage(this.image, function(img) {
+            
+            wrk.img = img
+            
+            img.mat.transparent = true;
+            wrk.grp.add(img.obj);
+            
+            img.obj.selected = function(sel) { wrk.selected(sel); }
 
             let div = 10;
+            
+            //img.mat.opacity = 0;
             
             wrk.onload();
         });
     }
 }
 
-/*
+Work.prototype.onload = function() {
+    
+}
 
-var area = [
-    {
-        offset: {
-            x: (Math.PI/-2),
-            y: 0,
-            z: 1
-        },
-        size: {
-            x: Math.PI / 3.5,
-            y: 1.3,
-            z: 0.25
-        }
-    },
-    {
-        offset: {
-            x: (Math.PI/-2),
-            y: 0,
-            z: 0
-        },
-        size: {
-            x: Math.PI,
-            y: Math.PI,
-            z: 1
+Work.prototype.selected = function(sel) {
+    console.log("selected proto: " + sel);
+}
+
+export function Cover(app, work_data, onload) {
+    Work.call(this, app, work_data, onload);
+    
+    var me = this;
+    
+    if(this.covertxt) {
+        
+        let loader = new app.THREE.FontLoader();
+        let txtmat = new app.THREE.MeshBasicMaterial( {color: 0xff0000 });
+                    
+        loader.load('./three/examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
+            
+            var txtgeo = new app.THREE.TextGeometry( "Justin\nSchmitz", {
+                font: font,
+                size: 0.25,
+                height: 0.01,
+                curveSegments: 2
+            } );
+            txtgeo.center();
+            
+            me.covtxt = {
+                obj: new app.THREE.Mesh( txtgeo, txtmat ),
+                geo: txtgeo, 
+                mat: txtmat
+            }
+            
+            me.covtxt.mat.transparent = true;
+            me.covtxt.mat.opacity = 0;
+            me.covtxt.obj.position.z = 0.1;
+            
+            me.covtxt.obj.selected = function(sel) { me.selected(sel); }
+
+            me.grp.add( me.covtxt.obj );
+        } );
+    }
+}
+
+Cover.prototype = Object.create(Work.prototype);
+Cover.prototype.constructor = Cover;
+
+Cover.prototype.selected = function(sel) {
+    console.log("selected: " + sel);
+    
+    if(true) {
+        if(sel) {
+            this.img.mat.opacity = 0;
+            this.covtxt.mat.opacity = 1;
+        } else {
+            this.img.mat.opacity = 1;
+            this.covtxt.mat.opacity = 0;
         }
     }
-]
-
-Work.prototype.move = function(app, x, y, z) {
-//    if(app.mobile) {
-//        rotateAboutPoint(this.obj, new app.THREE.Vector3( 0, 0, 0 ), new app.THREE.Vector3( 0, 1, 0 ), (Math.PI / 1), false);
-//
-//    } else {
-//        rotateAboutPoint(this.obj, new app.THREE.Vector3( 0, 0, 0 ), new app.THREE.Vector3( 0, 1, 0 ), (Math.PI/-2), false);
-//    }
-    
-    let i = Number(app.mobile);
-    var xr = area[i].offset.x - x * area[i].size.x;
-    var yr = area[i].offset.y + y * area[i].size.y;
-    var zr = area[i].offset.z + z * area[i].size.z;
-    
-    rotateAboutPoint(this.obj, new app.THREE.Vector3( 0, 0, 0 ), new app.THREE.Vector3( 0, 1, 0 ), xr, false);
-    this.obj.position.y = yr;
-    this.obj.position.multiplyScalar(zr);
 }
-*/
-
-Work.prototype.onload = function() {};
