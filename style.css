@@ -197,6 +197,11 @@ section.info {
 /*    color: white;*/
 }
 
+section.info:not(.visible) footer {
+    opacity: 0;
+    height: 0;
+}
+
 section.info.visible {
     height: 100%;
 /*    overflow: visible;*/
