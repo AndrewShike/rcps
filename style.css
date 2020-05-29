@@ -1,0 +1,534 @@
+
+body { margin: 0; }
+canvas { display: block; }
+
+* {
+    box-sizing: border-box;
+}
+
+canvas.hover {
+    cursor: pointer;
+}
+
+#overlay {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    background-color: white;
+    color: black;
+/*    background-color: #f3f3f3;*/
+}
+
+#overlay > div {
+    text-align: center;
+}
+
+#overlay > div > button {
+    font-size: 3rem;
+    font-family: 'Space Mono', monospace;
+    
+/*    height: 4.5rem;*/
+    background: transparent;
+    outline: 3px solid;
+    border: 0px;
+    cursor: pointer;
+}
+
+#startButton.ping {
+    opacity: 0;
+}
+
+a, button, input, select {
+    pointer-events: auto;
+}
+
+button {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #0060C9;
+}
+
+header {
+    position: absolute;
+    width: 100vw;
+    height: 3.5rem;
+    
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    grid-row-gap: 1rem;
+
+    padding: 1rem;
+}
+
+header > div > * {
+    margin: 0;
+}
+
+img.logos {
+    width: 10rem;
+}
+
+h1.title, p.button {
+    color: #0060C9;
+}
+
+h1.title {
+    font-size: .85rem;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    
+    transition: all 0.25s;
+}
+
+p.button {
+    font-size: 1.2rem;
+    font-family: 'Space Mono', monospace;
+    border: 2px solid #0060C9;
+    padding: 0.125rem 0.5rem;
+    background-color: white;
+    cursor: pointer;
+    
+    float: left;
+    
+/*    margin-bottom: 1rem;*/
+}
+
+p.button.artist {
+    opacity: 0;
+    transform: scale(0);
+    
+    transition: opacity 0.1s;
+}
+
+p.button.artist.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+span.left {
+    font-family: 'Source Code Pro', monospace;
+    display: inline-block;
+    font-weight: 300;
+    transform: rotate(180deg) translate(0, -4px) scale(1.3);
+}
+
+.arrows {
+    width: 100vw;
+    height: 4.5rem;
+
+    position: fixed;
+
+    top: 50vh;
+    transform: translate(0, -50%);
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 8rem;
+
+    z-index: -10;
+    opacity: 0;
+}
+
+.arrows.visible {
+    z-index: 1;
+    opacity: 1;
+}
+
+.arrows > div {
+    cursor: pointer;
+
+    margin: 0;
+
+    font-family: 'Source Code Pro', monospace;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 4.5rem;
+
+    color: #0060C9;
+    
+      -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+}
+
+.arrows > div:first-child {
+    transform: scaleX(-1);
+}
+
+section.info {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    
+    overflow: scroll;
+    
+    background-color: #f3f3f3;
+/*    background-color: #0060C9;*/
+    
+    transition: all 0.25s;
+    
+    font-family: 'Libre Baskerville', serif;
+    color: #0060C9;
+/*    color: white;*/
+}
+
+section.info.visible {
+    height: 100%;
+/*    overflow: visible;*/
+}
+
+.info > article {
+    margin: 0;
+    margin: auto;
+    margin-top: 0rem;
+/*    transform: scaleY(0);*/
+    height: 0;
+    overflow: hidden;
+    
+}
+
+.info > article.visible {
+/*    transform: scale(1);*/
+    height: auto;
+}
+
+.info h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+    
+    margin-top: 0;
+}
+
+.info h2 {
+    margin-top: 3rem;
+}
+
+.info p {
+    font-family: 'Space Mono', monospace;
+}
+
+.work-title {
+    position: fixed;
+    font-family: 'Space Mono', monospace;
+    color: #0060C9;
+    opacity: 0;
+    
+    transition: all 0.3s;
+}
+
+.work-title.visible {
+    opacity: 1;
+}
+
+.overlay h1 {
+    color: #0060C9;
+    
+    
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    
+    margin-top: 0;
+}
+
+iframe {
+    margin-bottom: 2rem;
+    width: 100%;
+/*    height: auto;*/
+}
+
+ul.artists {
+    list-style: circle;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: circle;
+}
+
+ul:not(.artists) {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-right: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Libre Baskerville', serif;
+/*    font-family: 'Space Mono', monospace;*/
+    font-style: italic;
+    font-weight: 500;
+}
+
+a, a:visited {
+/*        color: #ED3A43;*/
+    color: #0060C9;
+}
+
+footer {
+    font-family: 'Space Mono', monospace;
+    color: #0060C9;
+    font-size: 0.75rem;
+    
+    margin: 3rem 0;
+    padding: 3rem;
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info > .main > img:not(.headshot) {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.info > .main > img:last-child {
+    margin-bottom: 6rem;
+}
+
+.info > .main > h1:last-child {
+    margin-top: 6rem;
+}
+
+a.low {
+    display: inline-block;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 4rem;
+}
+
+/*(ESC)*/
+
+@media all and (min-width: 100vh) {
+    
+    h1.title.hidden {
+        opacity: 0;
+    }
+    .info > article {
+        max-width: 40rem;
+    }
+    
+    .info > article.visible {
+
+        margin: 5rem auto;
+    }
+    
+    p.button.back::after {
+        content: " (ESC)";
+    }
+    
+    p.button.artist::after {
+        content: " (Q)";
+    }
+    
+    p.button.on, p.button:hover {
+        color: white;
+        background-color: #0060C9;
+    }
+    
+    header > div:last-child {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+    }
+    
+    .work-title {
+        font-size: 1.2;
+        
+        max-width: 13rem;
+    }
+    
+    .work-title {
+        bottom: 5vh;
+        right: 50vw;
+        transform: translate(-20vw, 0);
+        
+    }
+    
+    #gif, #instructions {
+        height: 0;
+        overflow: hidden;
+    }
+    
+    img.headshot {
+        max-height: 30rem;
+        
+        margin: 2rem auto;
+        margin-left: 50%;
+        transform: translate(-50%, 0);
+    }
+    
+/*
+    .info > article > section {
+        display: grid;
+        
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+*/
+}
+
+@media all and (max-width: 100vh) {
+    
+    .overlay, .overlay * {
+        display: inline-block;
+    }
+    
+    #gif {
+        width: auto;
+        height: 50vh;
+    }
+    
+    #instructions {
+        font-family: 'Space Mono', monospace;
+        color: #0060C9;
+        font-size: 2rem;
+        
+        margin: 3rem 6rem;
+    }
+    
+    .overlay .logos {
+        float: none;
+        margin-bottom: 2rem;
+    }
+    
+    .overlay h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .work-title {
+        font-size: 1.75rem;
+        
+        max-width: 30rem;
+    }
+    
+    .work-title {
+        top: 81vh;
+        right: 50vw;
+        transform: translate(50%, -50%);
+        text-align: center;
+        
+    }
+    
+    .work-title p {
+        text-align: center;
+    }
+    
+    .info > article.visible {
+        margin: 15rem 6rem;
+    }
+    
+    p.button.on {
+        color: white;
+        background-color: #0060C9;
+    }
+    
+    header {
+        position: absolute;
+
+        height: 5rem;
+
+        grid-template-columns: auto auto 0.5fr auto;
+        grid-template-rows: 1fr 1fr;
+
+        padding: 2.5rem;
+        
+        grid-row-gap: 0rem;
+    }
+
+    header > div:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3 ;
+    }
+    
+    header > div:nth-child(4) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+    
+    header > div:nth-child(2) {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        
+    }
+    
+    header > div:nth-child(3) {
+        grid-column: 4 / 5;
+        grid-row: 2 / 3;
+    }
+    
+    h1.title {
+        font-size: 1.5rem;
+        text-align: justify;
+        
+        margin-bottom: 1rem;
+    }
+
+    p.button {
+        font-size: 3rem;
+        
+        border: 6px solid #0060C9;
+        padding: 0.125rem 0.5rem;
+    }
+    
+    img.logos {
+        margin-top: -0.25rem;
+        width: 20rem;
+    
+        float: right;
+    }
+    
+    .arrows {
+        width: 100vw;
+        height: 4.5rem;
+        
+        top: 76.5vh;
+
+        padding: 0 5rem;
+    }
+
+    .arrows > div {
+        font-weight: 300;
+        font-size: 10rem;
+    }
+    
+    .info h1 {
+        font-size: 5rem;
+        margin-bottom: 3rem;
+        font-style: italic;
+
+        margin-top: 0;
+    }
+
+    .info h2 {
+        font-size: 3rem;
+        margin-top: 4rem;
+    }
+
+    .info p {
+        font-size: 1.75rem;
+        font-family: 'Space Mono', monospace;
+    }
+
+}

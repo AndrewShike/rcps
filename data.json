@@ -1,0 +1,1111 @@
+{
+    "artists": [
+        {
+            "name": "Matt Siber",
+            "dir": "./work/MattSiber/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Untitled Object 1"
+            },
+            "work": [
+                {
+                    "file": "20191209cpslives-siber253.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 13"
+                },
+                {
+                    "file": "20200109cpslives-siber151.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 11"
+                },
+                {
+                    "file": "20190725_cpslives-siber_122.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 6"
+                },
+                {
+                    "file": "20200303cpslives-siber281.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 2"
+                },
+                {
+                    "file": "20191021cpslives-siber128.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 7"
+                },
+                {
+                    "file": "20200227cpslives-siber240.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 15"
+                },
+                {
+                    "file": "20191217cpslives-siber365.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 8"
+                },
+                {
+                    "file": "20191209cpslives-siber236.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 14"
+                },
+                {
+                    "file": "20200211cpslives-siber115.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 12"
+                },
+                {
+                    "file": "20200109cpslives-siber100.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 10"
+                },
+                {
+                    "file": "20191021cpslives-siber141.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 4"
+                },
+                {
+                    "file": "20191112cpslives-siber120.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 5"
+                },
+                {
+                    "file": "20200303cpslives-siber272.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 3"
+                },
+                {
+                    "file": "20191120cpslives-siber296.jpg",
+                    "type": "image",
+                    "title": "Untitled Object 9"
+                }
+            ]
+        },
+        {
+            "name": "Edra Soto",
+            "dir": "./work/EdraSoto/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "A"
+            },
+            "work": [
+                {
+                    "file": "IMG_0139.jpg",
+                    "type": "image",
+                    "title": "C"
+                },
+                {
+                    "file": "IMG_0138.jpg",
+                    "type": "image",
+                    "title": "J"
+                },
+                {
+                    "file": "IMG_0137.jpg",
+                    "type": "image",
+                    "title": "H"
+                },
+                {
+                    "file": "IMG_0141.jpg",
+                    "type": "image",
+                    "title": "G"
+                },
+                {
+                    "file": "IMG_0140.jpg",
+                    "type": "image",
+                    "title": "D"
+                },
+                {
+                    "file": "IMG_0143.jpg",
+                    "type": "image",
+                    "title": "F"
+                },
+                {
+                    "file": "IMG_0144.jpg",
+                    "type": "image",
+                    "title": "B"
+                },
+                {
+                    "file": "IMG_0145.jpg",
+                    "type": "image",
+                    "title": "E"
+                }
+            ]
+        },
+        {
+            "name": "Jim Iska",
+            "dir": "./work/JimIska/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Best Friends on the Monkey Bars, June 14 2019"
+            },
+            "work": [
+                {
+                    "file": "IMG_7552.jpg",
+                    "type": "image",
+                    "title": "Silhouettes, Auditorium Stage, June 14, 2019"
+                },
+                {
+                    "file": "IMG_7225.jpg",
+                    "type": "image",
+                    "title": "Three Friends in the Balcony of the Auditorium, June 13, 2019"
+                },
+                {
+                    "file": "IMG_7583.jpg",
+                    "type": "image",
+                    "title": "Five Friends Together, Front Entrance, June 14, 2019"
+                },
+                {
+                    "file": "IMG_7525.jpg",
+                    "type": "image",
+                    "title": "Three Friends, Front Entrance, June 14, 2019"
+                },
+                {
+                    "file": "IMG_7497.jpg",
+                    "type": "image",
+                    "title": "Together on the Stage Risers, June 14. 2019"
+                },
+                {
+                    "file": "IMG_7440.jpg",
+                    "type": "image",
+                    "title": "With School Counselor, June 13, 2019"
+                },
+                {
+                    "file": "IMG_7537.jpg",
+                    "type": "image",
+                    "title": "Performing an Aerial with Admirers, June 14, 2019"
+                },
+                {
+                    "file": "IMG_7895.jpg",
+                    "type": "image",
+                    "title": "At the Eight Grader/Teacher Softball Game, June 18, 2019"
+                },
+                {
+                    "file": "IMG_7298.jpg",
+                    "type": "image",
+                    "title": "With Her English Teacher, June 13, 2019"
+                },
+                {
+                    "file": "IMG_7407.jpg",
+                    "type": "image",
+                    "title": "With His Math Teacher, June 13, 2019"
+                },
+                {
+                    "file": "IMG_7599.jpg",
+                    "type": "image",
+                    "title": "Five Guys in Math Classroom, June 14, 2019 "
+                },
+                {
+                    "file": "IMG_7775.jpg",
+                    "type": "image",
+                    "title": "Social Studies Teacher’s Last Day on the Job, June 18, 2019"
+                },
+                {
+                    "file": "IMG_7367.jpg",
+                    "type": "image",
+                    "title": "Best Friends on the Spot Where They First Met, June 13, 2019"
+                }
+            ]
+        },
+        {
+            "name": "Scott Fortino",
+            "dir": "./work/ScottFortino/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Contraction Sullivan"
+            },
+            "work": [
+                {
+                    "file": "13fortino-sullivan-creases-2020.jpg",
+                    "type": "image",
+                    "title": "Sullivan Creases"
+                },
+                {
+                    "file": "02fortino-westinghouse-2019.jpg",
+                    "type": "image",
+                    "title": "Westinghouse 2019"
+                },
+                {
+                    "file": "01fortino-curie-artstudio-2019.jpg",
+                    "type": "image",
+                    "title": "Curie Art Studio"
+                },
+                {
+                    "file": "06fortino - marsh elementary2019.jpg",
+                    "type": "image",
+                    "title": "Marsh Elementary"
+                },
+                {
+                    "file": "08fortino-comer-teachers desk-2018.jpg",
+                    "type": "image",
+                    "title": "Comer Teacher's Desk"
+                },
+                {
+                    "file": "1106fortino-clemete-walkway-2019.jpg",
+                    "type": "image",
+                    "title": "Clemente Walkway"
+                },
+                {
+                    "file": "14fortino_marsh_counselor_s office.jpg",
+                    "type": "image",
+                    "title": "Marsh Couselor's Office"
+                },
+                {
+                    "file": "10fortino_vanderpoel_2019.jpg",
+                    "type": "image",
+                    "title": "Vanderpoel 2019"
+                },
+                {
+                    "file": "05fortino-clemente 2019.jpg",
+                    "type": "image",
+                    "title": "Clemente 2019"
+                },
+                {
+                    "file": "09fortino-sullivan-2020.jpg",
+                    "type": "image",
+                    "title": "Sullivan 2020"
+                },
+                {
+                    "file": "03fortino-comer-portraits-2018.jpg",
+                    "type": "image",
+                    "title": "Comer Portraits"
+                },
+                {
+                    "file": "11fortino - clemente 2019.jpg",
+                    "type": "image",
+                    "title": "Clemente 2019"
+                }
+            ]
+        },
+        {
+            "name": "Suzette\nBross",
+            "dir": "./work/SuzetteBross/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Michelle Navarre, Polaris Charter Academy"
+            },
+            "work": [
+                {
+                    "file": "20191119-_DSC1487-Edit.jpg",
+                    "type": "image",
+                    "title": "Jerry Travlos, Smyser Elementary School"
+                },
+                {
+                    "file": "DSC07137_Final_Sharpened-Edit.jpg",
+                    "type": "image",
+                    "title": "Micheal Wang, ChiArts High School"
+                },
+                {
+                    "file": "WhitneyYoung-00018.jpg",
+                    "type": "image",
+                    "title": "Dr. Joyce Kenner, Whitney M. Young Magnet High School"
+                },
+                {
+                    "file": "Noble Principal-01935.jpg",
+                    "type": "image",
+                    "title": "Lauren Boros, Noble Academy"
+                },
+                {
+                    "file": "SuzetteBross_PrincipalProject_JuanCarlosOcon_BenitoJuarezCommunityAcademyHighSchool.jpg",
+                    "type": "image",
+                    "title": "Juan Carlos Ocon, Benito Juarez Community Academy"
+                },
+                {
+                    "file": "SuzetteBross_PrincipalProject_FerdinandWipachit_PhoenixMilitaryAcademy.jpg",
+                    "type": "image",
+                    "title": "Ferdinand Wipachit, Phoenix Military Academy"
+                },
+                {
+                    "file": "SuzetteBross_PrincipalProject_FernandoMojica_RobertoClementeCommunityAcademy.jpg",
+                    "type": "image",
+                    "title": "Fernando Mojica, Roberto Clemente Community Academy"
+                },
+                {
+                    "file": "20190913-_DSC9248-Edit.jpg",
+                    "type": "image",
+                    "title": "Naomi Nakayama, Budlong Elementary School"
+                },
+                {
+                    "file": "20180216-DSC07300.jpg",
+                    "type": "image",
+                    "title": "Barton Dassinger, Cesar Chavez Academic Center"
+                },
+                {
+                    "file": "SuzetteBross_PrincipalProject_CharlesAnderson_MicheleClarkMagnetHighSchool.jpg",
+                    "type": "image",
+                    "title": "Charles Anderson, Michele Clark Magnet High School"
+                },
+                {
+                    "file": "20181107-DSC06849-Edit.jpg",
+                    "type": "image",
+                    "title": "Patrick Love, Alain Locke Charter School"
+                },
+                {
+                    "file": "Suzette_Bross_ ChadAdams,SullivanHighSchool.jpg",
+                    "type": "image",
+                    "title": "Chad Adams, Sullivan High School"
+                },
+                {
+                    "file": "20200303-_DSC2162.jpg",
+                    "type": "image",
+                    "title": "Meredith Bawden, Galileo Elementary School"
+                },
+                {
+                    "file": "20190731-_DSC9055-Edit.jpg",
+                    "type": "image",
+                    "title": "Folasade Adekunle, Sayre Language Academy"
+                }
+            ]
+        },
+        {
+            "name": "Kioto Aoki\n& Jan Tichy",
+            "dir": "./work/KiotoAokiJanTichy/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Jose Zavala"
+            },
+            "work": [
+                {
+                    "file": "Calonza ulloa.jpg",
+                    "type": "image",
+                    "title": "Calonza Ulloa"
+                },
+                {
+                    "file": "Citaly grab 4.jpg",
+                    "type": "image",
+                    "title": "Citaly Carranza"
+                },
+                {
+                    "file": "Elizabeth Screengrab 2.jpg",
+                    "type": "image",
+                    "title": "Elizabeth Arraiga"
+                },
+                {
+                    "file": "Guadalupe grab 3.jpg",
+                    "type": "image",
+                    "title": "Guadalupe Herenandez"
+                },
+                {
+                    "file": "karen A.jpg",
+                    "type": "image",
+                    "title": "Karen Aragon"
+                },
+                {
+                    "file": "Marvin L.jpg",
+                    "type": "image",
+                    "title": "Marvin Lopez"
+                },
+                {
+                    "file": "Nilsy B.jpg",
+                    "type": "image",
+                    "title": "Nilsy Baltazar"
+                },
+                {
+                    "file": "Quesalis C.jpg",
+                    "type": "image",
+                    "title": "Quesalis Carranza"
+                },
+                {
+                    "file": "Sarai.jpg",
+                    "type": "image",
+                    "title": "Sarai Arellano"
+                },
+                {
+                    "file": "Zitally.jpg",
+                    "type": "image",
+                    "title": "Zitaly Luvios"
+                }
+            ]
+        },
+        {
+            "name": "Marzena\nAbrahamik",
+            "dir": "./work/MarzenaAbrahamik/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Prom 10"
+            },
+            "work": [
+                {
+                    "file": "14YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 19"
+                },
+                {
+                    "file": "15YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 21"
+                },
+                {
+                    "file": "6YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 12"
+                },
+                {
+                    "file": "7YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 9"
+                },
+                {
+                    "file": "13YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 16"
+                },
+                {
+                    "file": "12YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 22"
+                },
+                {
+                    "file": "1YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 1"
+                },
+                {
+                    "file": "18YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 13"
+                },
+                {
+                    "file": "5YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 3"
+                },
+                {
+                    "file": "17YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 18"
+                },
+                {
+                    "file": "16YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 20"
+                },
+                {
+                    "file": "2YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 8"
+                },
+                {
+                    "file": "3YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 2"
+                },
+                {
+                    "file": "10YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 14"
+                },
+                {
+                    "file": "11YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 6"
+                },
+                {
+                    "file": "8YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 4"
+                },
+                {
+                    "file": "9YWLCS.jpg",
+                    "type": "image",
+                    "title": "Prom 5"
+                }
+            ]
+        },
+        {
+            "name": "Lynn Renee\nPersin",
+            "dir": "./work/LynnReneePersin/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Aleck"
+            },
+            "work": [
+                {
+                    "file": "14Violet_text.jpg",
+                    "type": "image",
+                    "title": "Violet"
+                },
+                {
+                    "file": "10Sonja_text.jpg",
+                    "type": "image",
+                    "title": "Sonja"
+                },
+                {
+                    "file": "1Jubilee_text.jpg",
+                    "type": "image",
+                    "title": "Jubilee"
+                },
+                {
+                    "file": "13Isaiah_text.jpg",
+                    "type": "image",
+                    "title": "Isaiah"
+                },
+                {
+                    "file": "15Jakob_text.jpg",
+                    "type": "image",
+                    "title": "Jakob"
+                },
+                {
+                    "file": "2Frances_text.jpg",
+                    "type": "image",
+                    "title": "Frances"
+                },
+                {
+                    "file": "6Anna_text.jpg",
+                    "type": "image",
+                    "title": "Anna"
+                },
+                {
+                    "file": "3Trinity_text.jpg",
+                    "type": "image",
+                    "title": "Trinity"
+                },
+                {
+                    "file": "7Rhys_text.jpg",
+                    "type": "image",
+                    "title": "Rhys"
+                },
+                {
+                    "file": "11Fletcher_text.jpg",
+                    "type": "image",
+                    "title": "Fletcher"
+                },
+                {
+                    "file": "12Nikola_text.jpg",
+                    "type": "image",
+                    "title": "Nikola"
+                },
+                {
+                    "file": "8Elliott_text.jpg",
+                    "type": "image",
+                    "title": "Elliot"
+                },
+                {
+                    "file": "9Deven_text.jpg",
+                    "type": "image",
+                    "title": "Deven"
+                },
+                {
+                    "file": "4Emma_text.jpg",
+                    "type": "image",
+                    "title": "Emma"
+                }
+            ]
+        },
+        {
+            "name": "Eileen Ryan",
+            "dir": "./work/EileenRyan/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Carlos and Jorge 1"
+            },
+            "work": [
+                {
+                    "file": "5Bem-1.jpg",
+                    "type": "image",
+                    "title": "Bem 1"
+                },
+                {
+                    "file": "9Willie-1.jpg",
+                    "type": "image",
+                    "title": "Willie 1"
+                },
+                {
+                    "file": "7Maya-2.jpg",
+                    "type": "image",
+                    "title": "Maya 2"
+                },
+                {
+                    "file": "2GianRobert3-.jpg",
+                    "type": "image",
+                    "title": "GianRobert 3"
+                },
+                {
+                    "file": "4GianRobert-1.jpg",
+                    "type": "image",
+                    "title": "Gian Robert 1"
+                },
+                {
+                    "file": "3GianRobert-2.jpg",
+                    "type": "image",
+                    "title": "GianRobert2"
+                },
+                {
+                    "file": "8Maya-1.jpg",
+                    "type": "image",
+                    "title": "Maya 1"
+                },
+                {
+                    "file": "6TRIPTYCH.jpg",
+                    "type": "image",
+                    "title": "Carlos and Jorge 1"
+                },
+                {
+                    "file": "1SABEHA.jpg",
+                    "type": "image",
+                    "title": "Sabeeha 1"
+                }
+            ]
+        },
+        {
+            "name": "Kelly Costello\n& Karishma\nKalpesh\nDotia",
+            "dir": "./work/KellyCostelloKarishmaKalpeshDotia/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "02 Institute of Design and Galileo Scholastic Students Reimagining The School Library"
+            },
+            "work": [
+                {
+                    "file": "01 Current library at Galileo Scholastic.jpg",
+                    "type": "image",
+                    "title": "Current Library at Galileo Scholastic"
+                },
+                {
+                    "file": "03 Institute of Design students generating.concepts for the school library.jpg",
+                    "type": "image",
+                    "title": "Institute of Design Students Generate Concepts For The School Library"
+                },
+                {
+                    "file": "04 Northwestern students demo their prototype at Galileo Scholastic.jpg",
+                    "type": "image",
+                    "title": "Northwestern Students Demo Their Prototype at Galileo Scholastic"
+                },
+                {
+                    "file": "05 Northwestern students demo their prototype at Galileo Scholastic.jpg",
+                    "type": "image",
+                    "title": "Northwestern Students Demo Their Prototypes at Galieleo Scholastic"
+                },
+                {
+                    "file": "06 Northwestern students show prototypes to GS.jpg",
+                    "type": "image",
+                    "title": "Northwestern Students Show Prototypes to GS"
+                },
+                {
+                    "file": "07 Building prototypes.jpg",
+                    "type": "image",
+                    "title": "Building Prototypes"
+                },
+                {
+                    "file": "08 Building prototypes 02.jpg",
+                    "type": "image",
+                    "title": "Building Prototypes 02"
+                },
+                {
+                    "file": "09 Final presentations at Northwestern-team2.jpg",
+                    "type": "image",
+                    "title": "Final Presentations at Northwestern Team 2"
+                },
+                {
+                    "file": "10 Final presentations at Northwestern-team1.jpg",
+                    "type": "image",
+                    "title": "Final Presentations at Northwestern Team 1"
+                }
+            ]
+        },
+        {
+            "name": "Marzena\nAbrahamik\n& Justin\nSchmitz",
+            "dir": "./work/MarzenaAbrahamikJustinSchmitz/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Michele Clark Cheer Team"
+            },
+            "work": [
+                {
+                    "file": "MCLARK_VarBasketBoys.jpg",
+                    "type": "image",
+                    "title": "Michele Clark Boys Varsity Basketball Team"
+                },
+                {
+                    "file": "Abrahamik_Michele_CLark.jpg",
+                    "type": "image",
+                    "title": "Michele Clark Dance Team"
+                },
+                {
+                    "file": "MC_Chess_Team.jpg",
+                    "type": "image",
+                    "title": "Michele Clark Chess Team"
+                }
+            ]
+        },
+        {
+            "name": "Jeff\nPhillips",
+            "dir": "./work/JeffPhillips/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Untitled 06"
+            },
+            "work": [
+                {
+                    "file": "Phillips-09.jpg",
+                    "type": "image",
+                    "title": "Untitled 09"
+                },
+                {
+                    "file": "Phillips-08.jpg",
+                    "type": "image",
+                    "title": "Untitled 08"
+                },
+                {
+                    "file": "Phillips-12.jpg",
+                    "type": "image",
+                    "title": "Untitled 12"
+                },
+                {
+                    "file": "Phillips-13.jpg",
+                    "type": "image",
+                    "title": "Untitled 13"
+                },
+                {
+                    "file": "Phillips-07.jpg",
+                    "type": "image",
+                    "title": "Untitled 07"
+                },
+                {
+                    "file": "Phillips-11.jpg",
+                    "type": "image",
+                    "title": "Untitled 11"
+                },
+                {
+                    "file": "Phillips-05.jpg",
+                    "type": "image",
+                    "title": "Untitled 05"
+                },
+                {
+                    "file": "Phillips-04.jpg",
+                    "type": "image",
+                    "title": "Untitled 04"
+                },
+                {
+                    "file": "Phillips-10.jpg",
+                    "type": "image",
+                    "title": "Untitled 10"
+                },
+                {
+                    "file": "Phillips-14.jpg",
+                    "type": "image",
+                    "title": "Untitled 14"
+                },
+                {
+                    "file": "Phillips-01.jpg",
+                    "type": "image",
+                    "title": "Untitled 01"
+                },
+                {
+                    "file": "Phillips-15.jpg",
+                    "type": "image",
+                    "title": "Untitled 15"
+                },
+                {
+                    "file": "Phillips-03.jpg",
+                    "type": "image",
+                    "title": "Untitled 03"
+                },
+                {
+                    "file": "Phillips-10a.jpg",
+                    "type": "image",
+                    "title": "Untitled 10"
+                },
+                {
+                    "file": "Phillips-02.jpg",
+                    "type": "image",
+                    "title": "Untitled 02"
+                }
+            ]
+        },
+        {
+            "name": "Krista\nWortendyke",
+            "dir": "./work/KristaWortendyke/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Slow Down "
+            },
+            "work": [
+                {
+                    "file": "CPSStillLifes-February_14_2020.jpg",
+                    "type": "image",
+                    "title": "Zepllien"
+                },
+                {
+                    "file": "RotaryPhone.jpg",
+                    "type": "image",
+                    "title": "Rotary Phone"
+                },
+                {
+                    "file": "CPSStillLifes-June_5_2018.jpg",
+                    "type": "image",
+                    "title": "Corner/Triangle"
+                },
+                {
+                    "file": "CofeeAndKidney.jpg",
+                    "type": "image",
+                    "title": "Coffee & Kidney"
+                },
+                {
+                    "file": "ElectricalBoxBoat.jpg",
+                    "type": "image",
+                    "title": "Electrical Box, Boat"
+                },
+                {
+                    "file": "CPSStillLifes-January_9_2018.jpg",
+                    "type": "image",
+                    "title": "Hey Boo"
+                },
+                {
+                    "file": "CPSStillLifes-January_10_2018.jpg",
+                    "type": "image",
+                    "title": "Integrity, Vision & Broom"
+                },
+                {
+                    "file": "CPSStillLifes-June_22_2018.jpg",
+                    "type": "image",
+                    "title": "Blackboard/Cork"
+                },
+                {
+                    "file": "CPSStillLifes-December_3_2017.jpg",
+                    "type": "image",
+                    "title": "Integrity, Vision & Broom"
+                },
+                {
+                    "file": "CPSStillLifes-Jannuary_5_2018.jpg",
+                    "type": "image",
+                    "title": "Closet Guild"
+                },
+                {
+                    "file": "CPSStillLifes-June_7_2018.jpg",
+                    "type": "image",
+                    "title": "Ball State"
+                },
+                {
+                    "file": "CPSStillLifes-November_19_2018.jpg",
+                    "type": "image",
+                    "title": "Thief...."
+                },
+                {
+                    "file": "Bubbles.jpg",
+                    "type": "image",
+                    "title": "Bubbles"
+                }
+            ]
+        },
+        {
+            "name": "Doug\nMcGoldrick",
+            "dir": "./work/DougMcGoldrick/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Big Shot"
+            },
+            "work": [
+                {
+                    "file": "start_of_day__DSC08946.jpg",
+                    "type": "image",
+                    "title": "Start of Day"
+                },
+                {
+                    "file": "standing_still__DSC08942.jpg",
+                    "type": "image",
+                    "title": "Standing Still"
+                },
+                {
+                    "file": "outside_joke__DSC07188.jpg",
+                    "type": "image",
+                    "title": "Outside Joke"
+                },
+                {
+                    "file": "heading_outside__DSC09631.jpg",
+                    "type": "image",
+                    "title": "Heading Outside"
+                },
+                {
+                    "file": "leap__DSC09633.jpg",
+                    "type": "image",
+                    "title": "Leap"
+                },
+                {
+                    "file": "Winter_ball__DSC07185.jpg",
+                    "type": "image",
+                    "title": "Winter Ball"
+                },
+                {
+                    "file": "tying_shoes__DSC08949.jpg",
+                    "type": "image",
+                    "title": "Tying Shoes"
+                },
+                {
+                    "file": "lunch_line__DSC08950.jpg",
+                    "type": "image",
+                    "title": "Lunch Line"
+                },
+                {
+                    "file": "playgournd_huddle__DSC09634.jpg",
+                    "type": "image",
+                    "title": "Playground Huddle"
+                }
+            ]
+        },
+        {
+            "name": "John Preus",
+            "dir": "./work/JohnPreus/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "UInfinite Games Still 1"
+            },
+            "work": [
+                {
+                    "file": "IMG_5567.JPG",
+                    "type": "image",
+                    "title": "Student column 1: Alondra Cruz, Lucero Mejia, Florine Pierrilus, Anisha Rimal"
+                },
+                {
+                    "file": "IMG_5569.JPG",
+                    "type": "image",
+                    "title": "Student mask 2: America Avelar, Lawrence Herbert, Monique Trujillo"
+                },
+                {
+                    "file": "IMG_5571.JPG",
+                    "type": "image",
+                    "title": "Student Mask 1: Taiwo Akinola and Christian Bahena"
+                },
+                {
+                    "file": "CoverOPT2.jpg",
+                    "type": "image",
+                    "title": "Infinite Games Still 2"
+                },
+                {
+                    "file": "IMG_5572.JPG",
+                    "type": "image",
+                    "title": "Student mask 1: Taiwo Akinola and Christian Bahena (Side View)"
+                }
+            ]
+        },
+        {
+            "name": "Justin\nSchmitz",
+            "dir": "./work/JustinSchmitz/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Homecoming (Crowd Surfing)"
+            },
+            "work": [
+                {
+                    "file": "HandsTaftHoCo001.jpg",
+                    "type": "image",
+                    "title": "Homecoming (Hands)"
+                },
+                {
+                    "file": "Taft-9820.jpg",
+                    "type": "image",
+                    "title": "Homecoming (Decision)"
+                },
+                {
+                    "file": "SchmitzCPS_TaftHoCo001.jpg",
+                    "type": "image",
+                    "title": "Homecoming (006)"
+                },
+                {
+                    "file": "SchmitzTaftShoes.jpg",
+                    "type": "image",
+                    "title": "Homecoming Shoes"
+                }
+            ]
+        },
+        {
+            "name": "Janet\nMesic-\nMackie",
+            "dir": "./work/JanetMesicMackie/",
+            "cover": {
+                "file": "COVER.jpg",
+                "type": "image",
+                "title": "Qawiyyah Akanni-Violist"
+            },
+            "work": [
+                {
+                    "file": "JMesicMackie_CPSLives_MusicAmundsen-0166-Edit.jpg",
+                    "type": "image",
+                    "title": "Veronica Balleza-Violinist"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0017-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 8"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0023-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 7"
+                },
+                {
+                    "file": "JMesicMackie_CPSLives_MusicAmundsen-0117-Edit.jpg",
+                    "type": "image",
+                    "title": "Jesus Alvarado-Cellist"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0088-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 1"
+                },
+                {
+                    "file": "JMesicMackie_CPSLives_MusicAmundsen-0226-Edit.jpg",
+                    "type": "image",
+                    "title": "Mary Janet Pasinabo-Violist"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0056-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 4"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0002-2-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 10"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0040-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 6"
+                },
+                {
+                    "file": "JMesicMackie_CPSLives_MusicAmundsen-0196-Edit.jpg",
+                    "type": "image",
+                    "title": "Evan Holmes - Violinist"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0079-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 2"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0073-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 3"
+                },
+                {
+                    "file": "JMesicMackie_CPSLives_MusicAmundsen-0357.jpg",
+                    "type": "image",
+                    "title": "Jamilah Abdujelil - Violist"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0050-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 5"
+                },
+                {
+                    "file": "AmundsenHSGirlsBB2019-0012-Edit.jpg",
+                    "type": "image",
+                    "title": "Amundsen Girls Varsity Basketball Team 9"
+                }
+            ]
+        }
+    ]
+}
