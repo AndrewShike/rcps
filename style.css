@@ -39,6 +39,13 @@ canvas.hover {
     outline: 3px solid;
     border: 0px;
     cursor: pointer;
+    
+    opacity: 1;
+    transition: all 0.25s;
+}
+
+#overlay > div > button.hidden {
+    opacity: 0;
 }
 
 #startButton.ping {

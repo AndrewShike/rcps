@@ -48,6 +48,8 @@ request.onload = function() {
             }
         }
     }
+    
+    $("#startButton").removeClass("hidden");
 
     if(true) {
         app.startButton = document.getElementById( 'startButton' );
