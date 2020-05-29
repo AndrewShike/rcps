@@ -279,9 +279,9 @@ ul:not(.artists) {
 ul li {
     margin-right: 1.75rem;
     margin-bottom: 0.5rem;
-    font-family: 'Libre Baskerville', serif;
-/*    font-family: 'Space Mono', monospace;*/
-    font-style: italic;
+/*    font-family: 'Libre Baskerville', serif;*/
+    font-family: 'Space Mono', monospace;
+/*    font-style: italic;*/
     font-weight: 500;
 }
 
