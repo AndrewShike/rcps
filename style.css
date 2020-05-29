@@ -397,6 +397,11 @@ a.low {
 
 @media all and (max-width: 100vh) {
     
+    img.headshot {
+        width: 100%;
+        height: auto;
+    }
+    
     .overlay, .overlay * {
         display: inline-block;
     }
