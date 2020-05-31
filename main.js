@@ -2,6 +2,7 @@ import * as THREE from './three/build/three.module.js';
 import { controls } from './controls.js';
 import { Homescreen, nav } from './screen.js';
 import { lookAtExt } from './lookat.js';
+import { css } from './css.js';
 
 
 window.mobileAndTabletCheck = function() {
@@ -15,6 +16,7 @@ var app = {}
 
 app.mobile = window.mobileAndTabletCheck();
 app.THREE = THREE;
+app.css = css;
 
 //            app.mobile = true;
 
@@ -68,34 +70,39 @@ request.onload = function() {
 
 app.init = function() {
 
-
+    app.container = document.getElementById( 'container' );
 
     app.scene = new app.THREE.Scene();
     app.scene.background = new app.THREE.Color(0xffffff);
-    app.camera = new app.THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    app.camera = new app.THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 2000);
+//    app.camera.position.z = 30;
     app.camera.target = new app.THREE.Vector3( 0, 0, 0 );
     app.camera.tween = new TWEEN.Tween(app.camera.target);
     window.camera = app.camera;
     app.camera.lookAt = lookAtExt(app);
 
-    app.renderer = new app.THREE.WebGLRenderer({ antialias: true, powerPreference: "low-power" });
+    app.renderer = new app.THREE.WebGLRenderer({ antialias: true, powerPreference: "low-power", alpha: true });
+    app.renderer.setClearColor( 0xffffff, 0);
+//    app.renderer.setClearAlpha(0.1);
+    
+    app.scene.background = null;
+    
+    
     app.renderer.setSize( window.innerWidth, window.innerHeight );
     window.renderer = app.renderer
-    document.body.appendChild( app.renderer.domElement );
-
+    
     app.nav = nav;
     app.nav.homescreen = new Homescreen(app);
     app.nav.location = app.nav.homescreen;
 
     app.controls = controls;
 
+    
+    
     controls.init(app);
-
-//                let material = new app.THREE.MeshBasicMaterial( { color: 0xff00ff } );
-//                let geometry = new app.THREE.BoxGeometry(.1,.1,.1);
-//                let box = new app.THREE.Mesh( geometry, material );
-//                box.position.z = -1;
-//                app.scene.add(box);
+    css.init(app);
+    
+    app.container.appendChild( app.renderer.domElement );
 
 }
 
@@ -106,7 +113,8 @@ function animate() {
 //                app.homescreen.update(1/60);
 
     app.renderer.render( app.scene, app.camera );
+    css.render(app);
 
-    TWEEN.update()
+    TWEEN.update();
 }
     

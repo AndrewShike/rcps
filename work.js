@@ -84,6 +84,7 @@ export function Work(app, dir, work_data, onload) {
     var wrk = this;
     this.grp = new app.THREE.Group();
     
+    
     if(this.file && this.type == "image") {
         
         app.loading.size++;
@@ -93,6 +94,7 @@ export function Work(app, dir, work_data, onload) {
             wrk.img = img;
             
             wrk.main = img;
+            wrk.raycastTarget = img;
             
             img.mat.transparent = true;
             wrk.grp.add(img.obj);
@@ -103,10 +105,43 @@ export function Work(app, dir, work_data, onload) {
             let div = 10;
             
             //img.mat.opacity = 0;
+            wrk.main.opacity = 1;
+            wrk.main.updateOpacity = function() {
+                wrk.main.mat.opacity = wrk.main.opacity;
+            }
             
             app.loading.update(1);
             wrk.onload();
         });
+    } else if(this.type == "youtube" && this.code) {
+        
+        let iframe = app.css.makeYoutube(this.code, 0.0025);
+        
+        
+//        console.log(iframe);
+        
+        wrk.iframe = iframe;
+        wrk.main = iframe;
+        wrk.grp.add(iframe.obj);
+        
+        let me = wrk;
+        me.raycastTarget = {}
+        me.raycastTarget.geo = new app.THREE.BoxGeometry(me.main.dim.x, me.main.dim.y, .001 );
+        me.raycastTarget.mat = new app.THREE.MeshBasicMaterial(); 
+        me.raycastTarget.mat.transparent = true;
+        me.raycastTarget.mat.opacity = 0;
+        me.raycastTarget.obj = new app.THREE.Mesh( me.raycastTarget.geo, me.raycastTarget.mat);
+        me.grp.add( me.raycastTarget.obj );
+        
+        me.raycastTarget.obj.selected = function(sel) { wrk.selected(sel, app); }
+        me.raycastTarget.obj.click = function() { wrk.click(); }
+        
+        wrk.main.opacity = 1;
+        wrk.main.updateOpacity = function() {
+            wrk.main.div.style.opacity = wrk.main.opacity;
+        }
+        
+        wrk.onload();
     }
 }
 
@@ -201,16 +236,18 @@ Cover.prototype = Object.create(Work.prototype);
 Cover.prototype.constructor = Cover;
 
 Cover.prototype.selected = function(sel) {
-    if(this.img && this.covtxt) {
+    if(this.covtxt) {
         if(sel) {
             this.dim_tween.stop();
             
-            this.img.mat.opacity = 0;
+            this.main.opacity = 0;
+            this.main.updateOpacity();
             this.covtxt.mat.opacity = 1;
             this.buttonbox.mat.opacity = 1;
             this.buttontxt.mat.opacity = 1;
         } else {
-            this.img.mat.opacity = 1;
+            this.main.opacity = 1;
+            this.main.updateOpacity();
             this.covtxt.mat.opacity = 0;
             this.buttonbox.mat.opacity = 0;
             this.buttontxt.mat.opacity = 0;
@@ -224,8 +261,7 @@ export function Artwork(app, dir, work_data, onload) {
     let imgl = function() {
         
         me.borderbox = {}
-        
-        me.borderbox.geo = new app.THREE.BoxGeometry(me.img.dim.x + 0.03, me.img.dim.y + 0.03, .001 );
+        me.borderbox.geo = new app.THREE.BoxGeometry(me.main.dim.x + 0.03, me.main.dim.y + 0.03, .001 );
         me.borderbox.mat = new app.THREE.MeshBasicMaterial( { color: 0x0060C9 } ) 
         me.borderbox.obj = new app.THREE.Mesh( me.borderbox.geo, me.borderbox.mat);
         
@@ -245,7 +281,11 @@ Artwork.prototype = Object.create(Work.prototype);
 Artwork.prototype.constructor = Artwork;
 
 Artwork.prototype.selected = function(sel, app) {
-    if(this.img && this.borderbox) {
+    
+    
+    if(this.borderbox) {
+        console.log("artselect", sel);
+        
         if(sel && !app.nav.zoomed) {
             this.borderbox.mat.opacity = 1;
         } else {

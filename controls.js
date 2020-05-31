@@ -40,15 +40,9 @@ controls.init = function(app) {
         setMouse(0.5, 0.5);
     } else {
             
-        //document.addEventListener( 'mousedown', onPointerStart, false );
         document.addEventListener( 'mousemove', onPointerMove, false );
-        //document.addEventListener( 'mouseup', onPointerUp, false );
 
-//        document.addEventListener( 'wheel', onDocumentMouseWheel, false );
-
-        //document.addEventListener( 'touchstart', onPointerStart, false );
-        document.addEventListener( 'touchmove', onPointerMove, false );
-        //document.addEventListener( 'touchend', onPointerUp, false );
+//        app.container.addEventListener( 'touchmove', onPointerMove, false );
 
         window.addEventListener( 'resize', onWindowResize, false );
 
@@ -58,6 +52,8 @@ controls.init = function(app) {
             app.camera.updateProjectionMatrix();
 
             app.renderer.setSize( window.innerWidth, window.innerHeight );
+            
+            app.css.onWindowResize(app);
 
         }
 
@@ -99,9 +95,9 @@ controls.init = function(app) {
         if(INTERSECTED && INTERSECTED.click) INTERSECTED.click();
     }
 
-    $("canvas").on(  'click', onDocumentClick);
+    $("#container").on(  'click', onDocumentClick);
     
-    $("canvas").on( 'touchstart', function(e) {
+    $("#container").on( 'touchstart', function(e) {
         e.preventDefault();
         
         onDocumentClick();
@@ -230,7 +226,7 @@ controls.update = function(app) {
 
         if ( intersects && intersects.length > 0 ) {
 
-            $("canvas").addClass("hover");
+            $("#container").addClass("hover");
 
             if ( INTERSECTED != intersects[ 0 ].object ) {
 
@@ -245,7 +241,7 @@ controls.update = function(app) {
 
         } else {
 
-            $("canvas").removeClass("hover");
+            $("#container").removeClass("hover");
 
             if ( INTERSECTED ) {
                 if(INTERSECTED.selected) INTERSECTED.selected(false);

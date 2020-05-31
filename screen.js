@@ -153,10 +153,8 @@ function Screen(app, dir, collapsed, dimmed, scooted, centered, addsphere, light
         var geometry = new app.THREE.IcosahedronGeometry(R, 1);
         var material = new app.THREE.MeshBasicMaterial( {color: 0x000000, wireframe: true} );
         var sphere = new app.THREE.Mesh( geometry, material );
-
-        me.group = new app.THREE.Group();
         
-//        material.transparent = true;
+        me.group = new app.THREE.Group();
 
         if(addsphere) app.scene.add( sphere );
 
@@ -216,14 +214,17 @@ Screen.prototype.dim = function(app, dimmed, t, del) {
     
     for(let i in this.works) {
         
-        if(this.works[i].img && this.works[i].img.mat) {
+        if(this.works[i].main) {
             this.works[i].dim_tween.stop()
-            this.works[i].dim_tween = new TWEEN.Tween(this.works[i].main.mat)
+            this.works[i].dim_tween = new TWEEN.Tween(this.works[i].main)
                 .easing(TWEEN.Easing.Exponential.Out)
                 .delay(d)
                 .to({
                     opacity: op
                 }, tt)
+                .onUpdate(() => {
+                    this.works[i].main.updateOpacity();
+                })
                 .start();
         }
     }
@@ -322,11 +323,13 @@ function Artistscreen(cover, app, idx, dir) {
             me.group.add( this.grp );
             
             this.index = k;
-            me.objs[k] = this.main.obj;
+            me.objs[k] = this.raycastTarget.obj;
 
             this.grp.position.copy(me.sphere.geo.vertices[isomap[0]]);
             this.grp.position.multiplyScalar(1 + 0.01 * (k/me.works.length));
-            this.main.mat.opacity = 0;
+            this.main.opacity = 0;
+            this.main.updateOpacity();
+            
             this.grp.lookAt(0,0,0);
             
             this.click = function() {
@@ -452,7 +455,7 @@ export function Homescreen(app) {
         return function() {
             me.group.add( this.grp );
 
-            me.objs[me.objs.length] = this.main.obj;
+            me.objs[me.objs.length] = this.raycastTarget.obj;
 
             this.grp.position.copy(me.sphere.geo.vertices[isomap[i]]);
             this.grp.position.multiplyScalar(0.9);
