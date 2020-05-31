@@ -261,18 +261,21 @@ export function Artwork(app, dir, work_data, onload) {
     
     let imgl = function() {
         
-        me.borderbox = {}
-        me.borderbox.geo = new app.THREE.BoxGeometry(me.main.dim.x + 0.03, me.main.dim.y + 0.03, .001 );
-        me.borderbox.mat = new app.THREE.MeshBasicMaterial( { color: 0x0060C9 } ) 
-        me.borderbox.obj = new app.THREE.Mesh( me.borderbox.geo, me.borderbox.mat);
-        
-        me.borderbox.mat.transparent = true;
-        me.borderbox.mat.opacity = 0;
-        me.borderbox.obj.position.z = -0.02;
-        
-        me.grp.add( me.borderbox.obj );
+        if(!app.mobile || me.type != "youtube") {
+            me.borderbox = {}
+            me.borderbox.geo = new app.THREE.BoxGeometry(me.main.dim.x + 0.03, me.main.dim.y + 0.03, .001 );
+            me.borderbox.mat = new app.THREE.MeshBasicMaterial( { color: 0x0060C9 } ) 
+            me.borderbox.obj = new app.THREE.Mesh( me.borderbox.geo, me.borderbox.mat);
+
+            me.borderbox.mat.transparent = true;
+            me.borderbox.mat.opacity = 0;
+            me.borderbox.obj.position.z = -0.02;
+
+            me.grp.add( me.borderbox.obj );
+        }
         
         if(onload) onload.call(me);
+        
     }
     
     Work.call(this, app, dir, work_data, imgl);
