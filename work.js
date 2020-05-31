@@ -131,6 +131,7 @@ export function Work(app, dir, work_data, onload) {
         me.raycastTarget.mat.transparent = true;
         me.raycastTarget.mat.opacity = 0;
         me.raycastTarget.obj = new app.THREE.Mesh( me.raycastTarget.geo, me.raycastTarget.mat);
+        me.raycastTarget.obj.z = -0.25;
         me.grp.add( me.raycastTarget.obj );
         
         me.raycastTarget.obj.selected = function(sel) { wrk.selected(sel, app); }
@@ -267,7 +268,7 @@ export function Artwork(app, dir, work_data, onload) {
         
         me.borderbox.mat.transparent = true;
         me.borderbox.mat.opacity = 0;
-//        me.borderbox.obj.position.z = -0.2;
+        me.borderbox.obj.position.z = -0.02;
         
         me.grp.add( me.borderbox.obj );
         
