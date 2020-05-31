@@ -11,7 +11,6 @@ window.mobileAndTabletCheck = function() {
     return check;
 };
 
-
 var app = {}
 
 app.mobile = window.mobileAndTabletCheck();

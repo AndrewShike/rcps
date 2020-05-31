@@ -5,7 +5,7 @@ var controls;
 
 export var css = {}
 
-css.makeYoutube = function ( id, s ) {
+css.makeYoutube = function ( id, s, autoplay ) {
 
     var div = document.createElement( 'div' );
     div.style.width = '480px';
@@ -16,7 +16,7 @@ css.makeYoutube = function ( id, s ) {
     iframe.style.width = '480px';
     iframe.style.height = '360px';
     iframe.style.border = '0px';
-    iframe.src = [ 'https://www.youtube.com/embed/', id, '?rel=0' ].join( '' );
+    iframe.src = [ 'https://www.youtube.com/embed/', id, '?rel=0&autoplay=1' ].join( '' );
     div.appendChild( iframe );
 
     var object = new CSS3DObject( div );

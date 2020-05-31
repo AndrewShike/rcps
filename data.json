@@ -364,8 +364,8 @@
             "name": "Kioto Aoki\n& Jan Tichy",
             "dir": "./work/KiotoAokiJanTichy/",
             "cover": {
-                "file": "COVER.jpg",
-                "type": "image",
+                "code": "wYgNwBkZS8c",
+                "type": "youtube",
                 "title": "Jose Zavala"
             },
             "work": [
@@ -375,48 +375,48 @@
                     "title": "Calonza Ulloa"
                 },
                 {
-                    "file": "Citaly grab 4.jpg",
-                    "type": "image",
+                    "code": "apCk6TLToPg",
+                    "type": "youtube",
                     "title": "Citaly Carranza"
                 },
                 {
-                    "file": "Elizabeth Screengrab 2.jpg",
-                    "type": "image",
+                    "code": "OeQo91eUrHo",
+                    "type": "youtube",
                     "title": "Elizabeth Arraiga"
                 },
                 {
-                    "file": "Guadalupe grab 3.jpg",
-                    "type": "image",
+                    "code": "832-2bmRYKg",
+                    "type": "youtube",
                     "title": "Guadalupe Herenandez"
                 },
                 {
-                    "file": "karen A.jpg",
-                    "type": "image",
+                    "code": "njCIlcqakUc",
+                    "type": "youtube",
                     "title": "Karen Aragon"
                 },
                 {
-                    "file": "Marvin L.jpg",
-                    "type": "image",
+                    "code": "sanoDKX6EbM",
+                    "type": "youtube",
                     "title": "Marvin Lopez"
                 },
                 {
-                    "file": "Nilsy B.jpg",
-                    "type": "image",
+                    "code": "Az0UFPMA5AU",
+                    "type": "youtube",
                     "title": "Nilsy Baltazar"
                 },
                 {
-                    "file": "Quesalis C.jpg",
-                    "type": "image",
+                    "code": "L_SA2OKrYrE",
+                    "type": "youtube",
                     "title": "Quesalis Carranza"
                 },
                 {
-                    "file": "Sarai.jpg",
-                    "type": "image",
+                    "code": "TMYbhqMafgw",
+                    "type": "youtube",
                     "title": "Sarai Arellano"
                 },
                 {
-                    "file": "Zitally.jpg",
-                    "type": "image",
+                    "code": "kG-y7khgs_k",
+                    "type": "youtube",
                     "title": "Zitaly Luvios"
                 }
             ]
@@ -958,9 +958,9 @@
             "name": "John Preus",
             "dir": "./work/JohnPreus/",
             "cover": {
-                "file": "COVER.jpg",
-                "type": "image",
-                "title": "UInfinite Games Still 1"
+                "code": "Xf8OV6ITWu8",
+                "type": "youtube",
+                "title": "Infinite Games"
             },
             "work": [
                 {
@@ -977,11 +977,6 @@
                     "file": "IMG_5571.JPG",
                     "type": "image",
                     "title": "Student Mask 1: Taiwo Akinola and Christian Bahena"
-                },
-                {
-                    "file": "CoverOPT2.jpg",
-                    "type": "image",
-                    "title": "Infinite Games Still 2"
                 },
                 {
                     "file": "IMG_5572.JPG",
