@@ -17,6 +17,7 @@ var app = {}
 app.mobile = window.mobileAndTabletCheck();
 app.THREE = THREE;
 app.css = css;
+window.css = css;
 
 //            app.mobile = true;
 
@@ -32,9 +33,6 @@ request.onerror = function(xhr, status, error) {
 request.onload = function() {
     app.data = request.response;
     
-    console.log(request.response);
-    
-    
     app.loading = {
         size: 0,
         progress: 0,
@@ -48,6 +46,8 @@ request.onload = function() {
             if(this.size > 100 && this.progress == this.size) {
                 var overlay = document.getElementById( 'overlay' );
                 overlay.remove();
+                
+                css.youtubeBump();
             }
         }
     }

@@ -68,6 +68,8 @@ nav.zoom = function(app, zoomed, work, artistscreen) {
         work.selected(false);
     }
     
+    $("#container").toggleClass("zoomed", zoomed);
+    
     nav.title(app, zoomed, work);
     
     if(this.zoomed != zoomed) {

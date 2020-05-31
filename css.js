@@ -34,6 +34,17 @@ css.makeYoutube = function ( id, s ) {
 
 }
 
+css.youtubeBump = function() {
+    
+    //there's some weird mobile bug with the youtube iframe getting nudged over. I equate this fix to when you smack a TV or DVD player just right and it works every time
+    
+    $("#container iframe").css("height", "0px");
+    
+    setTimeout(() => {
+        $("#container iframe").css("height", "360px");
+    }, 1000);
+}
+
 css.init = function init(app) {
 
     camera = app.camera;
