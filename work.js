@@ -143,6 +143,36 @@ export function Work(app, dir, work_data, onload) {
         }
         
         wrk.onload();
+    } else if(this.type == "img" && this.file) {
+        
+        let dom = app.css.makeImg(dir + this.file, 0.0035);
+        
+        
+//        console.log(iframe);
+        
+        wrk.dom = dom;
+        wrk.main = dom;
+        wrk.grp.add(dom.obj);
+        
+        let me = wrk;
+        me.raycastTarget = {}
+        me.raycastTarget.geo = new app.THREE.BoxGeometry(me.main.dim.x, me.main.dim.y, .001 );
+        me.raycastTarget.mat = new app.THREE.MeshBasicMaterial(); 
+        me.raycastTarget.mat.transparent = true;
+        me.raycastTarget.mat.opacity = 0;
+        me.raycastTarget.obj = new app.THREE.Mesh( me.raycastTarget.geo, me.raycastTarget.mat);
+        me.raycastTarget.obj.z = -0.25;
+        me.grp.add( me.raycastTarget.obj );
+        
+        me.raycastTarget.obj.selected = function(sel) { wrk.selected(sel, app); }
+        me.raycastTarget.obj.click = function() { wrk.click(); }
+        
+        wrk.main.opacity = 1;
+        wrk.main.updateOpacity = function() {
+            wrk.main.div.style.opacity = wrk.main.opacity;
+        }
+        
+        wrk.onload();
     }
 }
 
@@ -261,12 +291,12 @@ export function Artwork(app, dir, work_data, onload) {
     
     let imgl = function() {
         
-        if(!app.mobile || me.type != "youtube") {
+        if((!app.mobile || me.type == "image") && me.type != "img") {
             me.borderbox = {}
             me.borderbox.geo = new app.THREE.BoxGeometry(me.main.dim.x + 0.03, me.main.dim.y + 0.03, .001 );
             me.borderbox.mat = new app.THREE.MeshBasicMaterial( { color: 0x0060C9 } ) 
             me.borderbox.obj = new app.THREE.Mesh( me.borderbox.geo, me.borderbox.mat);
-
+            
             me.borderbox.mat.transparent = true;
             me.borderbox.mat.opacity = 0;
             me.borderbox.obj.position.z = -0.02;
@@ -275,7 +305,6 @@ export function Artwork(app, dir, work_data, onload) {
         }
         
         if(onload) onload.call(me);
-        
     }
     
     Work.call(this, app, dir, work_data, imgl);

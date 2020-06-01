@@ -5,12 +5,12 @@ var controls;
 
 export var css = {}
 
-css.makeYoutube = function ( id, s, autoplay ) {
+css.makeYoutube = function ( id, s ) {
 
     var div = document.createElement( 'div' );
     div.style.width = '480px';
     div.style.height = '360px';
-    div.style.backgroundColor = '#000';
+//    div.style.backgroundColor = '#FFFFFF';
 
     var iframe = document.createElement( 'iframe' );
     iframe.style.width = '480px';
@@ -18,6 +18,35 @@ css.makeYoutube = function ( id, s, autoplay ) {
     iframe.style.border = '0px';
     iframe.src = [ 'https://www.youtube.com/embed/', id, '?rel=0&autoplay=1' ].join( '' );
     div.appendChild( iframe );
+
+    var object = new CSS3DObject( div );
+    object.scale.set(s,s,s);
+
+    return {
+        obj: object,
+        div: div,
+        dim: {
+            x: 480 * s,
+            y: 360 * s,
+            z: 0.001
+        }
+    }
+
+}
+
+css.makeImg = function ( src, s ) {
+
+    var div = document.createElement( 'div' );
+    div.style.width = '480px';
+    div.style.height = '360px';
+//    div.style.backgroundColor = '#FFFFFF';
+
+    var img = document.createElement( 'img' );
+    img.style.width = '480px';
+    img.style.height = '360px';
+    img.style.border = '0px';
+    img.src = src;
+    div.appendChild( img );
 
     var object = new CSS3DObject( div );
     object.scale.set(s,s,s);

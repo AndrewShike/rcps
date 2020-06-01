@@ -12,6 +12,10 @@ body {
     z-index: 10;
 }
 
+#container img {
+    object-fit: cover;
+}
+
 canvas {
 /*    background: transparent;*/
 }

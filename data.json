@@ -958,8 +958,8 @@
             "name": "John Preus",
             "dir": "./work/JohnPreus/",
             "cover": {
-                "code": "Xf8OV6ITWu8",
-                "type": "youtube",
+                "file": "chair1.gif",
+                "type": "img",
                 "title": "Infinite Games"
             },
             "work": [
@@ -967,11 +967,6 @@
                     "file": "IMG_5567.JPG",
                     "type": "image",
                     "title": "Student column 1: Alondra Cruz, Lucero Mejia, Florine Pierrilus, Anisha Rimal"
-                },
-                {
-                    "file": "IMG_5569.JPG",
-                    "type": "image",
-                    "title": "Student mask 2: America Avelar, Lawrence Herbert, Monique Trujillo"
                 },
                 {
                     "file": "IMG_5571.JPG",
@@ -982,6 +977,16 @@
                     "file": "IMG_5572.JPG",
                     "type": "image",
                     "title": "Student mask 1: Taiwo Akinola and Christian Bahena (Side View)"
+                },
+                {
+                    "file": "IMG_5569.JPG",
+                    "type": "image",
+                    "title": "Student mask 2: America Avelar, Lawrence Herbert, Monique Trujillo"
+                },
+                {
+                    "file": "chair2.gif",
+                    "type": "img",
+                    "title": "Infinite Games"
                 }
             ]
         },
