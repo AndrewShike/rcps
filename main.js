@@ -32,6 +32,8 @@ request.onerror = function(xhr, status, error) {
 request.onload = function() {
     app.data = request.response;
     
+    console.log(request);
+    
     app.loading = {
         size: 0,
         progress: 0,
