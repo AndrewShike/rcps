@@ -16,7 +16,7 @@ css.makeYoutube = function ( id, s ) {
     iframe.style.width = '480px';
     iframe.style.height = '360px';
     iframe.style.border = '0px';
-    iframe.src = [ 'https://www.youtube.com/embed/', id, '?rel=0&autoplay=1' ].join( '' );
+    iframe.src = [ 'https://www.youtube.com/embed/', id, '?rel=0&autoplay=0' ].join( '' );
     div.appendChild( iframe );
 
     var object = new CSS3DObject( div );
@@ -64,11 +64,11 @@ css.makeImg = function ( src, s ) {
 }
 
 css.youtubeBump = function() {
-    
+
     //there's some weird mobile bug with the youtube iframe getting nudged over. I equate this fix to when you smack a TV or DVD player just right and it works every time
-    
+
     $("#container iframe").css("height", "0px");
-    
+
     setTimeout(() => {
         $("#container iframe").css("height", "360px");
     }, 1000);
@@ -83,7 +83,7 @@ css.init = function init(app) {
 
     renderer = new CSS3DRenderer();
     this.renderer = renderer;
-    
+
     renderer.setSize( window.innerWidth, window.innerHeight );
     container.appendChild( renderer.domElement );
 
